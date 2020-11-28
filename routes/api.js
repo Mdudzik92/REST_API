@@ -3,6 +3,8 @@ const Ninja = require('../models/ninja');
 const router = express.Router();
 const ninja = require('../models/ninja');
 
+// Setting up our GET request to perform queries to return only the ninjas that are near to us based on the parameters we provide in the GET request (in Postman)
+// ====================================================
 // Get a list of ninjas from the db
 router.get('/ninjas', function(req, res, next) {
     /* Ninja.find({}).then(function(ninjas){

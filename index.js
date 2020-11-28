@@ -8,9 +8,11 @@ const app = express();
 mongoose.connect('mongodb://localhost/ninjago');
 mongoose.Promise = global.Promise;
 
-// Middleware: Body Parser & Route Handler (Initialize routes is the Route Handler in this instance)
+// Middleware (app.use instances): 
+app.use(express.static('public'));
+// Body Parser
 app.use(express.json());
-// Initialize routes 
+// Route Handler Initialize routes 
 app.use('/api', require('./routes/api'));
 // Error Handling Middleware
 app.use(function(err, req, res, next){
